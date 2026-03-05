@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
-import { Menu } from "lucide-react"
+import { Menu, Sparkles } from "lucide-react"
 
 const navItems = [
   { label: "Home", href: "#home" },
@@ -14,7 +14,10 @@ const NavBar = () => {
   return (
     <header className="fixed left-0 right-0 top-0 z-50 border-b border-border/60 bg-background/90 backdrop-blur-lg">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
-        <a href="#home" className="text-xl font-semibold tracking-wide">
+        <a href="#home" className="flex items-center gap-2 text-xl font-semibold tracking-wide">
+          <span className="flex h-9 w-9 items-center justify-center rounded-full bg-secondary/80 text-primary">
+            <Sparkles className="h-4 w-4" />
+          </span>
           SuMandala
         </a>
         <nav className="hidden items-center gap-6 text-sm font-medium md:flex">
@@ -38,7 +41,12 @@ const NavBar = () => {
             </Button>
           </SheetTrigger>
           <SheetContent side="right" className="space-y-6">
-            <div className="text-lg font-semibold">SuMandala</div>
+            <div className="flex items-center gap-2 text-lg font-semibold">
+              <span className="flex h-8 w-8 items-center justify-center rounded-full bg-secondary/80 text-primary">
+                <Sparkles className="h-4 w-4" />
+              </span>
+              SuMandala
+            </div>
             <div className="flex flex-col gap-4">
               {navItems.map((item) => (
                 <a key={item.href} href={item.href} className="text-muted-foreground hover:text-foreground">
